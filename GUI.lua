@@ -64,50 +64,7 @@ AntiAFKSection:AddSlider("فاصل زمني (ثانية)", {
     end
 })
 
--- ==================================================================================
--- 🚀 تحسين الأداء (FPS Booster)
--- ==================================================================================
-local FPSTab = Window:AddTab("تحسين الأداء")
 
-FPSTab:AddSection("إعدادات الرسوميات")
-
-FPSTab:AddToggle("تقليل جودة الرسوميات", {
-    Default = true,
-    Callback = function(value)
-        _G.TheForge_FPS_LowerQuality = value
-    end
-})
-
-FPSTab:AddToggle("إلغاء الظلال", {
-    Default = true,
-    Callback = function(value)
-        _G.TheForge_FPS_DisableShadows = value
-    end
-})
-
-FPSTab:AddToggle("إلغاء المؤثرات (Particles)", {
-    Default = true,
-    Callback = function(value)
-        _G.TheForge_FPS_DisableParticles = value
-    end
-})
-
-FPSTab:AddToggle("وضع الشاشة السوداء (أقصى أداء)", {
-    Default = false,
-    Callback = function(value)
-        _G.TheForge_FPS_BlackScreenMode = value
-    end
-})
-
-FPSTab:AddButton("تطبيق إعدادات FPS", function()
-    -- يتم استدعاء وظيفة تطبيق الإعدادات من FPSBooster.lua
-    if _G.TheForge_ApplyFPS then
-        _G.TheForge_ApplyFPS()
-        print("✅ تم تطبيق إعدادات تحسين الأداء.")
-    else
-        warn("❌ لم يتم تحميل وظيفة تطبيق FPS. تأكد من تحميل FPSBooster.lua.")
-    end
-end)
 
 -- ==================================================================================
 -- 💰 المهام المتقدمة (Advanced Quests)
@@ -189,10 +146,7 @@ end)
 _G.TheForge_MainScript_Enabled = false
 _G.TheForge_AntiAFK_Enabled = true
 _G.TheForge_AntiAFK_Interval = 120
-_G.TheForge_FPS_LowerQuality = true
-_G.TheForge_FPS_DisableShadows = true
-_G.TheForge_FPS_DisableParticles = true
-_G.TheForge_FPS_BlackScreenMode = false
+
 _G.TheForge_Quest19_Enabled = false
 _G.TheForge_Quest19_AutoSell = true
 _G.TheForge_Quest19_AutoBuyPickaxe = true

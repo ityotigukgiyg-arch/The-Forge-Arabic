@@ -33,7 +33,6 @@ local CONFIG = {
     DEBUG_MODE = true,
     
     -- 🚀 تحسين الأداء
-    LOAD_FPS_BOOSTER = true,
     
     -- 🛡️ نظام مكافحة الخمول
     ANTI_AFK_ENABLED = true,
@@ -101,29 +100,7 @@ local function getCurrentIsland()
 end
 
 
-----------------------------------------------------------------
--- 🚀 تحميل معزز الإطارات
-----------------------------------------------------------------
-if CONFIG.LOAD_FPS_BOOSTER then
-    print("\n🚀 جاري تحميل معزز الإطارات...")
-    local fpsUrl = CONFIG.GITHUB_BASE_URL .. "Utils/FPSBooster.lua?t=" .. tostring(tick())
-    local fpsSuccess, fpsError = pcall(function()
-        local code = game:HttpGet(fpsUrl)
-        local func, syntaxErr = loadstring(code)
-        if func then
-            func()
-        else
-            error("خطأ في بناء الجملة في FPSBooster: " .. tostring(syntaxErr))
-        end
-    end)
-    
-    if fpsSuccess then
-        print("✅ تم تحميل معزز الإطارات!")
-    else
-        warn("⚠️ فشل تحميل معزز الإطارات: " .. tostring(fpsError))
-        warn("   الرابط: " .. fpsUrl)
-    end
-end
+
 
 ----------------------------------------------------------------
 -- 🛡️ نظام مكافحة الخمول
