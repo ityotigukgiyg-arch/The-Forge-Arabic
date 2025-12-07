@@ -10,7 +10,7 @@
     ملاحظة: يجب تعديل GITHUB_BASE_URL بعد رفع الملفات إلى مستودعك.
 --]]
 
-local GITHUB_BASE_URL = "https://raw.githubusercontent.com/talnw1123/The-Forge-Arabic/main/" -- **يجب تغيير هذا الرابط إلى رابط مستودعك**
+local GITHUB_BASE_URL = "https://raw.githubusercontent.com/ityotigukgiyg-arch/The-Forge-Arabic/master/" -- **يجب تغيير هذا الرابط إلى رابط مستودعك**
 
 local function httpGet(file)
     local url = GITHUB_BASE_URL .. file .. "?t=" .. tostring(tick())
