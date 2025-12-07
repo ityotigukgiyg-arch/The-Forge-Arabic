@@ -13,7 +13,9 @@
 local GITHUB_BASE_URL = "https://raw.githubusercontent.com/ityotigukgiyg-arch/The-Forge-Arabic/main/" -- **يجب تغيير هذا الرابط إلى رابط مستودعك**
 
 local function httpGet(file)
-    local url = GITHUB_BASE_URL .. file .. "?t=" .. tostring(tick())
+    -- إضافة متغير عشوائي (Cache Buster) لضمان تحميل أحدث نسخة
+    local cacheBuster = math.random(100000, 999999)
+    local url = GITHUB_BASE_URL .. file .. "?t=" .. tostring(tick()) .. "&cb=" .. tostring(cacheBuster)
     local success, result = pcall(function()
         return game:HttpGet(url)
     end)
